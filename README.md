@@ -58,3 +58,7 @@ No hay datos de demostración: todo se lee y se guarda en Supabase con el esquem
 ## Menú lateral (igual que YCLOUD v11)
 Inicio · Compras (Orden de compra, Ingreso al Kardex) · Ventas (Cotización, Orden de venta, Facturación, Estado de cuenta) · Inventarios (Movimiento de Kardex, Stock de productos) · Administración (Reportes, Mantenimientos y, solo para `admin`, Usuarios).
 **Mantenimientos** agrupa en pestañas los catálogos de Clientes, Proveedores y Productos (`/mantenimientos/clientes|proveedores|productos`); las rutas antiguas `/clientes`, `/proveedores` y `/productos` redirigen allí.
+
+## Base de datos
+Los scripts están en `database/`: `01_esquema_erp.sql` (esquema completo, ejecutar una vez en un proyecto limpio) y `03_datos_iphone_alejandro.sql` (carga inicial opcional de iPhones y proveedores; edita los datos antes de ejecutar).
+**Nunca subas el archivo `.env`** (ya está en `.gitignore`); usa `.env.example` como plantilla.

@@ -30,7 +30,7 @@ export default function DataTable<T>(p: Props<T>) {
   const [n, setN] = useState(5)
   const [ord, setOrd] = useState<{ i: number; d: 1 | -1 } | null>(null)
 
-  const estados = p.estado ? [...new Set(p.filas.map(p.estado))] : []
+  const estados = p.estado ? [...new Set([...p.filas.map(p.estado), ...(est ? [est] : [])])] : []
   let filas = p.filas.filter(x =>
     (!est || p.estado?.(x) === est) && (!fec || p.fecha?.(x) === fec) && (!alm || p.almacen?.(x) === alm) && (!q || p.texto(x).toLowerCase().includes(q.toLowerCase())))
   const f = ord ? p.columnas[ord.i].orden : undefined
